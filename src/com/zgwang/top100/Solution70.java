@@ -2,15 +2,15 @@ package com.zgwang.top100;
 
 public class Solution70 {
     public int climbStairs(int n) {
-        if(n ==0 || n == 1 || n== 2){
+        if(n <= 2){
             return n;
         }
-        int[] num = new int[n];
-        num[0] = 1;
-        num[1] = 2;
+        int[] step = new int[n];
+        step[0] = 1;
+        step[1] = 2;
         for(int i = 2; i < n; i++){
-            num[i] = num[i - 1] + num[i - 2];
+            step[i] = step[i - 1] + step[i -2];
         }
-        return num[n - 1];
+        return step[n - 1];
     }
 }
